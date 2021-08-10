@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite">
-  <test thread-count="5" name="Test1">
-    <classes>
-      <class name="mavenforjenkins.UITest"/>  
-    </classes>
-  </test> 
-</suite> 
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="TestingSuite" parallel="tests" thread-count="2">
+    <test name="CaseCreationGui">
+        <classes>
+            <class name="selenium.CaseCreationGui" />
+        </classes>
+    </test> <!-- Test -->
+    <test name="CaseCreationHeadless">
+        <classes>
+            <class name="selenium.CaseCreationHeadless" />
+        </classes>
+    </test>
+</suite
