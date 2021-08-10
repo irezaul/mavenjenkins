@@ -46,6 +46,16 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.0.0-M5</version>
 				<configuration>
+														<suite name="Sample suite">
+													  <test thread-count="5"
+													   name="Test `name">`
+													   <parameter name="browser" value="chrome"/>
+													   <parameter name="url" value="https://www.google.com"/>
+													   <classes>
+													      <class name="Packagename.Classname"/> 
+													    </classes>
+													   </test>
+													   </suite>
 					<suiteXmlFiles>
 						<suiteXmlFile>testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
