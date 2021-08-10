@@ -40,28 +40,28 @@
 					    <target>1.8</target>
 					</configuration>
 				    </plugin>
-							
-			<plugin>	
-
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-surefire-plugin</artifactId>
-				<version>3.0.0-M5</version>
-				<configuration>
-					<suiteXmlFiles>
-						<suiteXmlFile>testng.xml</suiteXmlFile>
-					</suiteXmlFiles>
-					
-					<systemPropertyVariables>
-					
-					<browser>${Browser}</browser>
-					
-					</systemPropertyVariables>
-					
-				</configuration>
-			</plugin>
-
-		</plugins>
-
+			<profiles>
+				    <profile>
+					<id>selenium-tests</id>
+					<build>
+					    <plugins>
+						<plugin>
+						    <groupId>org.apache.maven.plugins</groupId>
+						    <artifactId>maven-surefire-plugin</artifactId>
+						    <version>2.20</version>
+						    <configuration>
+							<includes>
+							    <include>CaseCreationGui.java</include>
+							    <include>CaseCreationHeadless.java</include>
+							</includes>
+							<suiteXmlFiles>
+							    <suiteXmlFile>testng.xml</suiteXmlFile>
+							</suiteXmlFiles>
+						    </configuration>
+						</plugin>
+					    </plugins>
+					</build>
+				    </profile>
 
 	</build>
 
